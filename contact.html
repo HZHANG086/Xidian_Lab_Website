@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 某某大学张三教授团队</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root { --primary-color: #003366; }
+        .navbar { background: var(--primary-color); }
+        .contact-icon { font-size: 1.5rem; color: var(--primary-color); margin-right: 15px; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg sticky-top mb-4">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="index.html">LAB-NAME</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">首页</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- 左侧：联系信息 -->
+            <div class="col-md-5">
+                <div class="p-4 bg-white rounded shadow-sm h-100">
+                    <h2 class="fw-bold mb-4">联系我们</h2>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-geo-alt contact-icon"></i>
+                        <div><strong>地址</strong><br>某某省某某市某某大学XX实验楼 402室</div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope contact-icon"></i>
+                        <div><strong>邮箱</strong><br>prof_zhang@university.edu.cn</div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-telephone contact-icon"></i>
+                        <div><strong>电话</strong><br>010-12345678</div>
+                    </div>
+                    <a href="index.html" class="btn btn-outline-secondary w-100"><i class="bi bi-house"></i> 返回首页</a>
+                </div>
+            </div>
+
+            <!-- 右侧：留言表单 -->
+            <div class="col-md-7 mt-4 mt-md-0">
+                <div class="p-4 bg-white rounded shadow-sm">
+                    <h4 class="mb-4">在线留言</h4>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small">姓名</label>
+                                <input type="text" class="form-control" placeholder="您的姓名">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small">邮箱</label>
+                                <input type="email" class="form-control" placeholder="您的邮箱">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small">内容</label>
+                                <textarea class="form-control" rows="5" placeholder="请输入您的留言内容..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary px-5">提交留言</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

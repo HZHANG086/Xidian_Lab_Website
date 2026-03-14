@@ -1,0 +1,254 @@
+/* ========== 全局 ========== */
+:root {
+    --main-blue: #0056b3;
+    --dark-grey: #333;
+    --light-grey: #f8f9fa;
+    --border-color: #eee;
+    --text-muted: #666;
+}
+
+* { box-sizing: border-box; }
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; margin: 0; color: var(--dark-grey); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* ========== 导航栏 ========== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.logo { font-weight: bold; font-size: 1.15rem; color: var(--main-blue); white-space: nowrap; }
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+}
+.nav-links a { font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--main-blue); }
+.nav-links a.active { color: var(--main-blue); }
+
+/* ========== 首页 Hero（不依赖图片） ========== */
+.hero {
+    margin-top: 52px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #003d82 0%, #0056b3 50%, #0077d9 100%);
+    padding: 60px 20px;
+}
+.hero h1 { margin: 0 0 12px; font-size: clamp(1.5rem, 4vw, 2.2rem); }
+.hero p { margin: 0; font-size: 1rem; opacity: 0.95; }
+
+/* ========== 通用区块 ========== */
+.section { padding: 50px 5%; }
+.section--alt { background: var(--light-grey); padding: 50px 5%; }
+.section h2 { text-align: center; margin: 0 0 32px; font-size: 1.5rem; }
+
+/* ========== 子页面页头 ========== */
+.page-header {
+    background: var(--main-blue);
+    color: #fff;
+    padding: 100px 5% 50px;
+    text-align: center;
+    margin-top: 52px;
+}
+.page-header h1 { margin: 0 0 8px; font-size: 1.8rem; }
+.page-header p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+
+/* ========== 容器 ========== */
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+/* ========== 时间轴（履历） ========== */
+.timeline {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding-left: 8px;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--main-blue);
+}
+.timeline-item {
+    position: relative;
+    padding: 12px 0 12px 32px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 2px solid var(--main-blue);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* ========== 研究领域 ========== */
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.field-box {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+.field-box:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.field-box h3 { margin: 0; font-size: 1.05rem; color: var(--dark-grey); }
+
+/* ========== 团队成员 ========== */
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.member-card {
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.member-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    background: #ddd;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.member-card h4 { margin: 0 0 4px; font-size: 1.1rem; }
+.member-card .role { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 8px; }
+.member-card .intro { font-size: 0.9rem; color: #555; margin: 0; line-height: 1.5; }
+
+/* ========== 首页科研成果摘要 ========== */
+.achievement-list { list-style: none; padding: 0; margin: 0 0 20px; max-width: 640px; margin-left: auto; margin-right: auto; }
+.achievement-list li { padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 0.95rem; }
+.achievement-list li:last-child { border-bottom: none; }
+.section-cta { text-align: center; margin-top: 16px; }
+.section-cta a { color: var(--main-blue); font-weight: 500; }
+
+/* ========== 合作方 ========== */
+.partners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px 48px;
+    padding: 20px;
+}
+.partner-item { text-align: center; }
+.partner-logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 8px;
+    background: var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: background 0.2s;
+}
+.partner-item:hover .partner-logo { background: #e0e0e0; }
+.partner-item p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+
+/* ========== 卡片（通用） ========== */
+.card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+.card h3 { margin: 0 0 12px; font-size: 1.15rem; }
+.card p { margin: 0 0 8px; font-size: 0.95rem; }
+.card p:last-child { margin-bottom: 0; }
+.card .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+
+/* 加入我们页：强调卡片、联系卡片 */
+.card--highlight { border-left: 4px solid var(--main-blue); }
+.card--contact { background: #f0f6ff; text-align: center; border: 1px dashed var(--main-blue); }
+.card--contact .email { color: var(--main-blue); font-size: 1.2rem; margin: 8px 0; }
+
+/* ========== 标签 ========== */
+.tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; margin-right: 8px; }
+.tag-paper { background: #28a745; color: #fff; }
+.tag-patent { background: #ffc107; color: #333; }
+.tag-award { background: #dc3545; color: #fff; }
+
+/* ========== 活动页 ========== */
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+.activity-card { padding: 0; overflow: hidden; }
+.activity-img {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(145deg, #e0e0e0 0%, #c8c8c8 100%);
+    margin-bottom: 0;
+}
+.activity-card h4 { margin: 16px 20px 8px; font-size: 1.1rem; }
+.activity-card .meta { margin: 0 20px 8px; font-size: 0.9rem; color: var(--text-muted); }
+.activity-card p { margin: 0 20px 20px; font-size: 0.95rem; }
+
+/* ========== 响应式 ========== */
+@media (max-width: 768px) {
+    nav { padding: 12px 16px; }
+    .nav-links { justify-content: flex-end; }
+    .hero { min-height: 260px; padding: 48px 16px; margin-top: 48px; }
+    .section, .section--alt { padding: 36px 16px; }
+    .page-header { padding: 88px 16px 40px; margin-top: 48px; }
+    .container { padding: 28px 16px; }
+    .member-grid { grid-template-columns: 1fr; }
+    .field-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .logo { font-size: 1rem; }
+    .nav-links a { font-size: 0.9rem; }
+    .hero h1 { font-size: 1.35rem; }
+    .activity-grid { grid-template-columns: 1fr; }
+}
